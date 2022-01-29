@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Crypto Demo App</string>
+    <string name="button_get_data">Get Data</string>
+    <string name="button_change_order">Change Order</string>
 </resources>
