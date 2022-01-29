@@ -1,7 +1,7 @@
 package com.samuel.cryptodemoapp.domain.use_case
 
-import com.samuel.cryptocurrency.domain.OrderType
-import com.samuel.cryptocurrency.util.Resource
+import com.samuel.cryptodemoapp.domain.OrderType
+import com.samuel.cryptodemoapp.util.Resource
 import com.samuel.cryptodemoapp.domain.model.Currency
 import com.samuel.cryptodemoapp.domain.repository.CurrencyRepository
 import kotlinx.coroutines.flow.Flow

@@ -1,4 +1,4 @@
-package com.samuel.cryptocurrency.domain
+package com.samuel.cryptodemoapp.domain
 
 sealed class OrderType {
     object Ascending : OrderType()

@@ -4,8 +4,8 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.samuel.cryptocurrency.domain.OrderType
-import com.samuel.cryptocurrency.util.Resource
+import com.samuel.cryptodemoapp.domain.OrderType
+import com.samuel.cryptodemoapp.util.Resource
 import com.samuel.cryptodemoapp.domain.use_case.GetCurrencyListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job

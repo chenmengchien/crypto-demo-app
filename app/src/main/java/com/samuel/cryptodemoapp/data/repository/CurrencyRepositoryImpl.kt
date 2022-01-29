@@ -1,7 +1,7 @@
 package com.samuel.cryptodemoapp.data.repository
 
 import android.util.Log
-import com.samuel.cryptocurrency.util.Resource
+import com.samuel.cryptodemoapp.util.Resource
 import com.samuel.cryptodemoapp.data.local.CurrencyDao
 import com.samuel.cryptodemoapp.data.remote.CurrencyService
 import com.samuel.cryptodemoapp.domain.model.Currency
