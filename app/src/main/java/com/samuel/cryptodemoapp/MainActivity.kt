@@ -5,11 +5,14 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.samuel.cryptodemoapp.presentation.currency_list.CurrencyListScreen
 import com.samuel.cryptodemoapp.ui.theme.CryptoDemoAppTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,22 +20,24 @@ class MainActivity : ComponentActivity() {
             CryptoDemoAppTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                    val navController = rememberNavController()
+                    NavHost(
+                        navController = navController,
+                        startDestination = Screen.CurrencyListScreen.route,
+                    ) {
+                        composable(
+                            route = Screen.CurrencyListScreen.route
+                        ) {
+                            CurrencyListScreen(navController = navController)
+                        }
+                        composable(
+                            route = Screen.CurrencyDetailScreen.route
+                        ) {
+
+                        }
+                    }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    CryptoDemoAppTheme {
-        Greeting("Android")
     }
 }
