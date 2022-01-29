@@ -26,8 +26,8 @@ fun CurrencyItem(
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier
-            .padding(14.dp)
             .clickable { onItemClick.invoke(currency.id) }
+            .padding(14.dp)
     ) {
         Box(
             contentAlignment = Alignment.Center,
