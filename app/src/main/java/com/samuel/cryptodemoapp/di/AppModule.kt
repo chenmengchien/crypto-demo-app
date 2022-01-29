@@ -6,6 +6,7 @@ import com.samuel.cryptodemoapp.data.local.CurrencyDatabase
 import com.samuel.cryptodemoapp.data.remote.CurrencyService
 import com.samuel.cryptodemoapp.data.repository.CurrencyRepositoryImpl
 import com.samuel.cryptodemoapp.domain.repository.CurrencyRepository
+import com.samuel.cryptodemoapp.util.MockRequestInterceptor
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -49,6 +50,7 @@ object AppModule {
                     .connectTimeout(10, TimeUnit.SECONDS)
                     .writeTimeout(10, TimeUnit.SECONDS)
                     .readTimeout(30, TimeUnit.SECONDS)
+                    .addInterceptor(MockRequestInterceptor(app))
                     .build()
             )
             .addConverterFactory(
