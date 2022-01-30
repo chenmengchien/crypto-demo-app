@@ -6,4 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface CurrencyRepository {
     fun getCurrencyList(): Flow<Resource<List<Currency>>>
+    fun getCurrencyDetail(currencyId: String): Flow<Currency>
 }

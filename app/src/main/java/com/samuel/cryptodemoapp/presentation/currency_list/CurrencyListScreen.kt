@@ -14,8 +14,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.samuel.cryptodemoapp.domain.OrderType
 import com.samuel.cryptodemoapp.R
+import com.samuel.cryptodemoapp.Screen
+import com.samuel.cryptodemoapp.domain.OrderType
 import com.samuel.cryptodemoapp.presentation.currency_list.component.CurrencyItem
 
 @Composable
@@ -33,7 +34,7 @@ fun CurrencyListScreen(
                     CurrencyItem(
                         currency = currency,
                         onItemClick = {
-
+                            navController.navigate("${Screen.CurrencyDetailScreen.route}/$it")
                         }
                     )
                     if (index < state.currencyList.size) {

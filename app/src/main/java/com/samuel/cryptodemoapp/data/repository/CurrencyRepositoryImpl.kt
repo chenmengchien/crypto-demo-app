@@ -1,11 +1,12 @@
 package com.samuel.cryptodemoapp.data.repository
 
 import android.util.Log
-import com.samuel.cryptodemoapp.util.Resource
 import com.samuel.cryptodemoapp.data.local.CurrencyDao
+import com.samuel.cryptodemoapp.data.local.entity.CurrencyEntity
 import com.samuel.cryptodemoapp.data.remote.CurrencyService
 import com.samuel.cryptodemoapp.domain.model.Currency
 import com.samuel.cryptodemoapp.domain.repository.CurrencyRepository
+import com.samuel.cryptodemoapp.util.Resource
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -40,5 +41,10 @@ class CurrencyRepositoryImpl(
                 )
             )
         }
+    }
+
+    override fun getCurrencyDetail(currencyId: String): Flow<Currency> = flow {
+        val result = dao.getCurrency(currencyId)
+        emit(result.toCurrency())
     }
 }
